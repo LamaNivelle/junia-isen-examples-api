@@ -14,17 +14,12 @@ variable "subnet_id" {
 }
 
 variable "role_definition_name" {
-  description = "Nom du rôle Azure RBAC à attribuer"
+  description = "Azure role name to attribute"
   type        = string
   default     = "Storage Blob Data Contributor"
 }
 
-variable "principal_id" {
-  description = "The principal ID of the managed identity from the App Service"
-  type        = string
-}
-
 variable "random_suffix" {
-  description = "Suffixe aléatoire pour les noms des ressources"
+  description = "Random suffix for the names"
   type        = string
 }
