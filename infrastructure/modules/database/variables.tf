@@ -19,6 +19,17 @@ variable "subnet_id" {
 }
 
 variable "random_suffix" {
-  description = "Suffixe aléatoire pour les noms des ressources"
+  description = "Random suffix for the name"
   type        = string
+}
+
+variable "admin_login" {
+  description = "The administrator login for PostgreSQL"
+  type        = string
+}
+
+variable "admin_password" {
+  description = "The administrator password for PostgreSQL"
+  type        = string
+  sensitive   = true
 }
