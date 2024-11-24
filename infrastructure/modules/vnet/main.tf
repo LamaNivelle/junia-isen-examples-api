@@ -52,3 +52,43 @@ resource "azurerm_subnet" "subnet" {
     }
   }
 }
+
+# Define a Network Security Group (NSG) for the App Service subnet
+resource "azurerm_network_security_group" "webapp_nsg" {
+  name = "webapp-nsg"
+  resource_group_name = var.resource_group_name
+  location = var.location
+
+  # Allow traffic from the database subnet to the App Service subnet
+  security_rule {
+    name                       = "AllowDbSubnetTraffic"
+    priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "*"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "10.0.1.0/24" # Db subnet
+    destination_address_prefix = "10.0.3.0/24" # App subnet
+  }
+}
+
+# Define a Network Security Group (NSG) for the Database subnet
+resource "azurerm_network_security_group" "db_nsg" {
+  name                = "db-nsg"
+  resource_group_name = var.resource_group_name
+  location            = var.location
+
+  # Allow traffic from the App Service subnet to the database subnet
+  security_rule {
+    name                       = "AllowAppSubnetTraffic"
+    priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "*"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "10.0.3.0/24"
+    destination_address_prefix = "10.0.1.0/24"
+  }
+}

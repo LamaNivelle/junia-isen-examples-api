@@ -19,6 +19,6 @@ variable "subnet_address_prefixes" {
 }
 
 variable "random_suffix" {
-  description = "Suffixe aléatoire pour les noms des ressources"
+  description = "Random suffix for the names"
   type        = string
 }
