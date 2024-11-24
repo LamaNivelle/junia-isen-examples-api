@@ -37,3 +37,35 @@ variable "gateway_name" {
     type = string  
     default = "ccp-gateway"
 }
+
+variable "administrator_login" {
+  description = "The administrator login for the PostgreSQL database"
+  type        = string
+}
+
+variable "administrator_password" {
+  description = "The administrator password for the PostgreSQL database"
+  type        = string
+}
+
+variable "docker_registry_url" {
+  description = "The administrator password for the PostgreSQL database"
+  type        = string
+  default     = "https://ghcr.io/"
+}
+
+variable "docker_image" {
+  description = "The administrator password for the PostgreSQL database"
+  type        = string
+  default     = "ghcr.io/htocqueville/junia-isen-examples-api:latest"
+}
+
+variable "docker_registry_password" {
+  description = "The administrator password for the PostgreSQL database"
+  type        = string
+}
+
+variable "docker_registry_username" {
+  description = "The administrator password for the PostgreSQL database"
+  type        = string
+}
