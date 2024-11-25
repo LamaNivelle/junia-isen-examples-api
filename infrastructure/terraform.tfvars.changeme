@@ -1,0 +1,17 @@
+# Azure region where the infrastructure will be deployed
+location = "France Central"
+
+# Azure subscription ID
+subscription_id = ""
+
+# Administrator login for the database and resources
+administrator_login = ""
+
+# Administrator password for the database and resources
+administrator_password = ""
+
+# Docker registry password for accessing the registry (e.g., GitHub Container Registry)
+docker_registry_password = ""
+
+# Docker registry username for accessing the registry
+docker_registry_username = ""
