@@ -8,11 +8,6 @@ variable "location" {
   type        = string
 }
 
-variable "web_app_name" {
-  description = "The name of the web app"
-  type        = string
-}
-
 variable "random_suffix" {
   description = "Suffixe aléatoire pour les noms des ressources"
   type        = string

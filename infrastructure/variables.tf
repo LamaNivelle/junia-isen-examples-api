@@ -27,11 +27,6 @@ variable "subnet_name" {
   default     = "app-service-subnet"
 }
 
-variable "web_app_name" {
-  description = "Nom de la Web App"
-  type        = string
-}
-
 variable "gateway_name" {
     description = "Name of the gateway"
     type = string  

@@ -54,7 +54,6 @@ module "app_service" {
   source              = "./modules/app_service"
   resource_group_name = module.resource_group.resource_group_name
   location            = var.location
-  web_app_name        = var.web_app_name
   random_suffix       = random_string.common.result
   subnet_id           = module.vnet.subnet_id
 
